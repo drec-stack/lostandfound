@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Безопасность | LostFound Global</title>
+    <meta name="description" content="Как мы защищаем ваши данные и обеспечиваем безопасность при использовании сервиса.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="chaotic-bg"></div>
+    
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Lost<span>Found</span></a>
+            </div>
+            <div class="lang-switch">
+                <a href="#" class="lang-link" onclick="toggleLanguage(); return false;">English</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')">☰</button>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html" data-translate="nav_home">Главная</a></li>
+                <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                <li><a href="how-it-works.html" data-translate="nav_how">Как работает</a></li>
+                <li><a href="stories.html" data-translate="nav_stories">Истории</a></li>
+                <li><a href="about.html" data-translate="nav_about">О нас</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-title" data-translate="safety_title">Безопасность</h1>
+                <p class="about-subtitle" data-translate="safety_subtitle">Как мы защищаем ваши данные и обеспечиваем безопасность</p>
+            </div>
+        </section>
+
+        <section class="safety-grid">
+            <div class="safety-card">
+                <div class="safety-icon">🔒</div>
+                <h3 data-translate="safety_data_title">Защита персональных данных</h3>
+                <p data-translate="safety_data_desc">Ваши контактные данные не видны публично. Они раскрываются только при взаимном согласии сторон, когда система находит совпадение.</p>
+                <div class="safety-tips">
+                    <ul>
+                        <li>Email шифруется в базе данных</li>
+                        <li>Телефон не публикуется в открытом доступе</li>
+                        <li>Вы контролируете, кому показывать ваши данные</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-card">
+                <div class="safety-icon">🛡️</div>
+                <h3 data-translate="safety_verify_title">Верификация пользователей</h3>
+                <p data-translate="safety_verify_desc">Мы проверяем заявки и отслеживаем подозрительную активность, чтобы защитить вас от мошенников.</p>
+                <div class="safety-tips">
+                    <ul>
+                        <li>Модерация всех объявлений</li>
+                        <li>Система репутации пользователей</li>
+                        <li>Блокировка подозрительных аккаунтов</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-card">
+                <div class="safety-icon">📧</div>
+                <h3 data-translate="safety_contact_title">Безопасная связь</h3>
+                <p data-translate="safety_contact_desc">Мы предоставляем защищённый канал для общения между потерявшим и нашедшим.</p>
+                <div class="safety-tips">
+                    <ul>
+                        <li>Чат внутри платформы</li>
+                        <li>Временная почта для связи</li>
+                        <li>Возможность пожаловаться на спам</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-card">
+                <div class="safety-icon">⚡</div>
+                <h3 data-translate="safety_tips_title">Советы по безопасности</h3>
+                <p data-translate="safety_tips_desc">Следуйте простым правилам при возврате вещей.</p>
+                <div class="safety-tips">
+                    <ul>
+                        <li>Встречайтесь в людных местах</li>
+                        <li>Не переводите деньги незнакомцам</li>
+                        <li>Попросите подтверждение владения вещью</li>
+                        <li>Используйте чат платформы для общения</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>LostFound Global</h4>
+                <p data-translate="footer_about">Возвращаем потерянное с 2024 года</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_links">Ссылки</h4>
+                <ul>
+                    <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                    <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                    <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_info">Информация</h4>
+                <ul>
+                    <li><a href="about.html" data-translate="footer_about_project">О проекте</a></li>
+                    <li><a href="contact.html" data-translate="footer_contact">Контакты</a></li>
+                    <li><a href="safety.html" data-translate="footer_safety">Безопасность</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Социальные сети</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LostFound Global. <span data-translate="footer_copyright">Все права защищены</span>.</p>
+        </div>
+    </footer>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
