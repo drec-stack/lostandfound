@@ -1,8 +1,7 @@
-// API Configuration
-const API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with your Apps Script URL
+// API Configuration - замените на ваш URL после настройки бэкенда
+const API_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
 
-// Utility Functions
-function showMessage(elementId, message, type = 'success') {
+function showMessage(elementId, message, type) {
     const messageEl = document.getElementById(elementId);
     if (messageEl) {
         messageEl.textContent = message;
@@ -14,16 +13,6 @@ function showMessage(elementId, message, type = 'success') {
     }
 }
 
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-}
-
-// Load Statistics
 async function loadStatistics() {
     try {
         const response = await fetch(`${API_URL}?action=getStats`);
@@ -43,7 +32,6 @@ async function loadStatistics() {
     }
 }
 
-// Report Lost Item
 async function reportLost(event) {
     event.preventDefault();
     
@@ -59,33 +47,39 @@ async function reportLost(event) {
         dateLost: document.getElementById('dateLost').value,
         description: document.getElementById('description').value,
         contactEmail: document.getElementById('contactEmail').value,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        language: currentLang
     };
     
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
         
         const result = await response.json();
         
         if (result.status === 'ok') {
-            showMessage('resultMessage', 'Your report has been submitted successfully. We will notify you if a match is found.', 'success');
+            const successMsg = currentLang === 'ru' 
+                ? 'Заявка принята! Мы уведомим вас при совпадении.'
+                : 'Report submitted! We will notify you if a match is found.';
+            showMessage('resultMessage', successMsg, 'success');
             event.target.reset();
         } else {
-            showMessage('resultMessage', 'An error occurred. Please try again.', 'error');
+            const errorMsg = currentLang === 'ru'
+                ? 'Ошибка. Попробуйте снова.'
+                : 'An error occurred. Please try again.';
+            showMessage('resultMessage', errorMsg, 'error');
         }
     } catch (error) {
-        console.error('Error submitting report:', error);
-        showMessage('resultMessage', 'Network error. Please check your connection.', 'error');
+        const errorMsg = currentLang === 'ru'
+            ? 'Ошибка сети. Проверьте соединение.'
+            : 'Network error. Please check your connection.';
+        showMessage('resultMessage', errorMsg, 'error');
     }
 }
 
-// Report Found Item
 async function reportFound(event) {
     event.preventDefault();
     
@@ -101,33 +95,39 @@ async function reportFound(event) {
         dateFound: document.getElementById('dateFound').value,
         description: document.getElementById('description').value,
         contactEmail: document.getElementById('contactEmail').value,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        language: currentLang
     };
     
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         });
         
         const result = await response.json();
         
         if (result.status === 'ok') {
-            showMessage('resultMessage', 'Thank you for helping! The owner will be notified if this matches a lost report.', 'success');
+            const successMsg = currentLang === 'ru'
+                ? 'Спасибо! Владелец будет уведомлён при совпадении.'
+                : 'Thank you! The owner will be notified if this matches a lost report.';
+            showMessage('resultMessage', successMsg, 'success');
             event.target.reset();
         } else {
-            showMessage('resultMessage', 'An error occurred. Please try again.', 'error');
+            const errorMsg = currentLang === 'ru'
+                ? 'Ошибка. Попробуйте снова.'
+                : 'An error occurred. Please try again.';
+            showMessage('resultMessage', errorMsg, 'error');
         }
     } catch (error) {
-        console.error('Error submitting report:', error);
-        showMessage('resultMessage', 'Network error. Please check your connection.', 'error');
+        const errorMsg = currentLang === 'ru'
+            ? 'Ошибка сети. Проверьте соединение.'
+            : 'Network error. Please check your connection.';
+        showMessage('resultMessage', errorMsg, 'error');
     }
 }
 
-// Search Matches
 async function searchMatches(event) {
     event.preventDefault();
     
@@ -138,77 +138,61 @@ async function searchMatches(event) {
     };
     
     const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = '<div class="loading">Searching for matches...</div>';
+    const loadingMsg = currentLang === 'ru' ? 'Поиск совпадений...' : 'Searching for matches...';
+    resultsContainer.innerHTML = `<div class="loading">${loadingMsg}</div>`;
     
     try {
-        const response = await fetch(`${API_URL}?action=search&item=${encodeURIComponent(searchParams.itemName)}&city=${encodeURIComponent(searchParams.city)}&category=${encodeURIComponent(searchParams.category)}`);
+        const response = await fetch(`${API_URL}?action=search&item=${encodeURIComponent(searchParams.itemName)}&city=${encodeURIComponent(searchParams.city)}&category=${encodeURIComponent(searchParams.category)}&lang=${currentLang}`);
         const matches = await response.json();
         
         if (matches.length === 0) {
-            resultsContainer.innerHTML = '<div class="no-results">No matches found yet. Check back later or adjust your search criteria.</div>';
+            const noResultsMsg = currentLang === 'ru'
+                ? 'Совпадений не найдено. Попробуйте изменить параметры поиска.'
+                : 'No matches found. Try changing your search criteria.';
+            resultsContainer.innerHTML = `<div class="no-results">${noResultsMsg}</div>`;
         } else {
             resultsContainer.innerHTML = matches.map(match => `
                 <div class="match-card">
                     <div class="match-header">
                         <h3>${match.itemName}</h3>
-                        <span class="match-score">${match.score}% Match</span>
+                        <span class="match-score">${match.score}% ${currentLang === 'ru' ? 'совпадение' : 'Match'}</span>
                     </div>
                     <div class="match-details">
-                        <div class="match-detail">
-                            <strong>Location:</strong> ${match.location}, ${match.city}
-                        </div>
-                        <div class="match-detail">
-                            <strong>Date:</strong> ${formatDate(match.date)}
-                        </div>
-                        <div class="match-detail">
-                            <strong>Category:</strong> ${match.category}
-                        </div>
-                        <div class="match-detail">
-                            <strong>Color:</strong> ${match.color || 'Not specified'}
-                        </div>
+                        <div class="match-detail"><strong>${currentLang === 'ru' ? 'Место:' : 'Location:'}</strong> ${match.location}, ${match.city}</div>
+                        <div class="match-detail"><strong>${currentLang === 'ru' ? 'Категория:' : 'Category:'}</strong> ${match.category}</div>
+                        <div class="match-detail"><strong>${currentLang === 'ru' ? 'Цвет:' : 'Color:'}</strong> ${match.color || (currentLang === 'ru' ? 'Не указан' : 'Not specified')}</div>
                     </div>
                     <div class="match-contact">
-                        <strong>Contact:</strong> ${match.contactEmail}
+                        <strong>${currentLang === 'ru' ? 'Контакт:' : 'Contact:'}</strong> ${match.contactEmail}
                     </div>
                 </div>
             `).join('');
         }
     } catch (error) {
-        console.error('Error searching matches:', error);
-        resultsContainer.innerHTML = '<div class="error">An error occurred while searching. Please try again.</div>';
+        const errorMsg = currentLang === 'ru'
+            ? 'Ошибка поиска. Попробуйте снова.'
+            : 'Search error. Please try again.';
+        resultsContainer.innerHTML = `<div class="error">${errorMsg}</div>`;
     }
 }
 
-// Initialize page-specific functionality
 document.addEventListener('DOMContentLoaded', () => {
-    // Load statistics on homepage
     if (document.getElementById('lostCount')) {
         loadStatistics();
     }
     
-    // Initialize lost report form
     const lostForm = document.getElementById('lostForm');
-    if (lostForm) {
-        lostForm.addEventListener('submit', reportLost);
-    }
+    if (lostForm) lostForm.addEventListener('submit', reportLost);
     
-    // Initialize found report form
     const foundForm = document.getElementById('foundForm');
-    if (foundForm) {
-        foundForm.addEventListener('submit', reportFound);
-    }
+    if (foundForm) foundForm.addEventListener('submit', reportFound);
     
-    // Initialize search form
     const searchForm = document.getElementById('searchForm');
-    if (searchForm) {
-        searchForm.addEventListener('submit', searchMatches);
-    }
+    if (searchForm) searchForm.addEventListener('submit', searchMatches);
     
-    // Set default date values
     const today = new Date().toISOString().split('T')[0];
     const dateLostInput = document.getElementById('dateLost');
     const dateFoundInput = document.getElementById('dateFound');
-    
     if (dateLostInput) dateLostInput.max = today;
     if (dateFoundInput) dateFoundInput.max = today;
 });
