@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Report a lost item - Help us find your belongings">
+    <title>Report Lost Item | LostFound Global</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="/">LostFound</a>
+            </div>
+            <div class="nav-links">
+                <a href="/pages/report-lost.html" class="nav-link">Report Lost</a>
+                <a href="/pages/report-found.html" class="nav-link">Report Found</a>
+                <a href="/pages/search.html" class="nav-link">Search</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="form-card">
+                <h1 class="form-title">Report a Lost Item</h1>
+                <p class="form-subtitle">Fill out the form below. We'll notify you if someone finds your item.</p>
+                
+                <form id="lostForm">
+                    <div class="form-group">
+                        <label for="itemName">Item Name *</label>
+                        <input type="text" id="itemName" name="itemName" required placeholder="e.g., iPhone 14 Pro, Black Backpack, Wedding Ring">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="bags">Bags & Luggage</option>
+                                <option value="documents">Documents & IDs</option>
+                                <option value="jewelry">Jewelry & Accessories</option>
+                                <option value="keys">Keys</option>
+                                <option value="wallet">Wallet & Cards</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="color">Color</label>
+                            <input type="text" id="color" name="color" placeholder="e.g., Black, Silver, Red">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="brand">Brand / Model</label>
+                        <input type="text" id="brand" name="brand" placeholder="e.g., Apple, Nike, Samsung">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location">Location Lost *</label>
+                            <input type="text" id="location" name="location" required placeholder="e.g., Central Park, Airport Terminal 3, Starbucks on Main St">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required placeholder="e.g., New York, London, Tokyo">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <input type="text" id="country" name="country" required placeholder="e.g., United States, United Kingdom, Japan">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dateLost">Date Lost *</label>
+                        <input type="date" id="dateLost" name="dateLost" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Provide any additional details that could help identify your item (serial numbers, unique marks, etc.)"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email *</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required placeholder="your@email.com">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Submit Lost Report</button>
+                </form>
+                
+                <div id="resultMessage" class="result-message"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LostFound Global</h4>
+                    <p>Reconnecting people with their lost belongings worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/pages/report-lost.html">Report Lost</a></li>
+                        <li><a href="/pages/report-found.html">Report Found</a></li>
+                        <li><a href="/pages/search.html">Search</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LostFound Global. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
