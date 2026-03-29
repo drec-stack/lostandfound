@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LostFound Global | Вернём потерянное</title>
-    <meta name="description" content="Международная платформа для поиска потерянных и найденных вещей">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>LostFound Global | Сервис поиска потерянных вещей</title>
+    <meta name="description" content="Международная платформа для поиска потерянных и найденных вещей. Тысячи успешных возвратов по всему миру.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="chaotic-bg"></div>
-    
     <header class="header">
         <div class="nav-container">
             <div class="logo">
@@ -27,94 +25,124 @@
                 <li><a href="pages/lost.html" data-translate="nav_lost">Я потерял</a></li>
                 <li><a href="pages/found.html" data-translate="nav_found">Я нашёл</a></li>
                 <li><a href="pages/search.html" data-translate="nav_search">Поиск</a></li>
+                <li><a href="pages/how-it-works.html" data-translate="nav_how">Как работает</a></li>
+                <li><a href="pages/stories.html" data-translate="nav_stories">Истории</a></li>
+                <li><a href="pages/about.html" data-translate="nav_about">О нас</a></li>
+                <li><a href="pages/contact.html" data-translate="nav_contact">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-bg-shape shape-1"></div>
-            <div class="hero-bg-shape shape-2"></div>
-            <div class="hero-bg-shape shape-3"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="title-line" data-translate="hero_title">Потеряли</span>
-                    <span class="title-line highlight" data-translate="hero_title_highlight">что-то важное?</span>
+                    <span data-translate="hero_title">Потеряли что-то важное?</span>
                 </h1>
-                <p class="hero-description" data-translate="hero_description">Мы соединяем потерянные и найденные вещи по всему миру. Тысячи людей уже вернули своё благодаря нашей платформе.</p>
+                <p class="hero-description" data-translate="hero_description">
+                    Мы соединяем потерянные и найденные вещи по всему миру. 
+                    Тысячи людей уже вернули своё благодаря нашей платформе.
+                </p>
                 <div class="hero-buttons">
-                    <a href="pages/lost.html" class="btn btn-primary btn-chaotic-1" data-translate="btn_report_lost">Сообщить о потере</a>
-                    <a href="pages/found.html" class="btn btn-secondary btn-chaotic-2" data-translate="btn_report_found">Сообщить о находке</a>
+                    <a href="pages/lost.html" class="btn btn-primary" data-translate="btn_report_lost">Сообщить о потере</a>
+                    <a href="pages/found.html" class="btn btn-outline" data-translate="btn_report_found">Сообщить о находке</a>
                 </div>
             </div>
         </section>
 
+        <!-- Statistics Section -->
         <section class="stats-section">
             <div class="stats-grid">
-                <div class="stat-card stat-card-1">
+                <div class="stat-card">
                     <div class="stat-number" id="lostCount">0</div>
                     <div class="stat-label" data-translate="stat_lost">Потеряно вещей</div>
                 </div>
-                <div class="stat-card stat-card-2">
+                <div class="stat-card">
                     <div class="stat-number" id="foundCount">0</div>
                     <div class="stat-label" data-translate="stat_found">Найдено вещей</div>
                 </div>
-                <div class="stat-card stat-card-3">
+                <div class="stat-card">
                     <div class="stat-number" id="matchedCount">0</div>
                     <div class="stat-label" data-translate="stat_matched">Успешных возвратов</div>
                 </div>
             </div>
         </section>
 
-        <section class="chaotic-grid-section">
-            <div class="chaotic-grid">
-                <div class="chaotic-card card-lost">
-                    <div class="card-icon">⚡</div>
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title" data-translate="features_title">Возможности платформы</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 data-translate="card_search_title">Мгновенный поиск</h3>
-                    <p data-translate="card_search_desc">Наша система автоматически ищет совпадения между потерянными и найденными вещами</p>
-                    <a href="pages/search.html" class="card-link" data-translate="card_search_link">Найти →</a>
+                    <p data-translate="card_search_desc">Автоматический поиск совпадений между потерянными и найденными вещами</p>
+                    <a href="pages/search.html" class="feature-link" data-translate="card_search_link">Найти →</a>
                 </div>
-                <div class="chaotic-card card-found">
-                    <div class="card-icon">🌍</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21M12 3V21M5 5L19 19M5 19L19 5" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 data-translate="card_global_title">По всему миру</h3>
-                    <p data-translate="card_global_desc">Работает в любой стране, любом городе. Географических ограничений нет</p>
-                    <a href="#" class="card-link" data-translate="card_global_link">Узнать →</a>
+                    <p data-translate="card_global_desc">Работает в любой стране и городе. Географических ограничений нет</p>
+                    <a href="pages/how-it-works.html" class="feature-link" data-translate="card_global_link">Узнать →</a>
                 </div>
-                <div class="chaotic-card card-match">
-                    <div class="card-icon">🔒</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15V17M6 21H18C19.1046 21 20 20.1046 20 19V5C20 3.89543 19.1046 3 18 3H6C4.89543 3 4 3.89543 4 5V19C4 20.1046 4.89543 21 6 21Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 data-translate="card_safety_title">Безопасная связь</h3>
-                    <p data-translate="card_safety_desc">Ваши контактные данные защищены до момента подтверждения совпадения</p>
-                    <a href="#" class="card-link" data-translate="card_safety_link">Подробнее →</a>
+                    <p data-translate="card_safety_desc">Ваши данные защищены до подтверждения совпадения</p>
+                    <a href="pages/safety.html" class="feature-link" data-translate="card_safety_link">Подробнее →</a>
                 </div>
-                <div class="chaotic-card card-story">
-                    <div class="card-icon">⭐</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 data-translate="card_stories_title">Реальные истории</h3>
-                    <p data-translate="card_stories_desc">Читайте истории людей, которые уже нашли свои потерянные вещи</p>
-                    <a href="#" class="card-link" data-translate="card_stories_link">Читать →</a>
+                    <p data-translate="card_stories_desc">Люди, которые уже нашли свои потерянные вещи</p>
+                    <a href="pages/stories.html" class="feature-link" data-translate="card_stories_link">Читать →</a>
                 </div>
             </div>
         </section>
 
-        <section class="testimonials">
-            <h2 class="section-title chaotic-section-title" data-translate="testimonials_title">Что говорят наши пользователи</h2>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2 class="section-title" data-translate="testimonials_title">Что говорят наши пользователи</h2>
             <div class="testimonials-grid">
-                <div class="testimonial testimonial-1">
-                    <p data-translate="testimonial_1">"Потерял телефон в метро. Через 2 дня нашёлся благодаря этому сервису!"</p>
-                    <cite data-translate="testimonial_1_author">— Алексей, Москва</cite>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-translate="testimonial_1">
+                        "Потерял телефон в метро. Через 2 дня нашёлся благодаря этому сервису!"
+                    </p>
+                    <p class="testimonial-author" data-translate="testimonial_1_author">— Алексей, Москва</p>
                 </div>
-                <div class="testimonial testimonial-2">
-                    <p data-translate="testimonial_2">"Нашёл чей-то кошелёк, быстро связался с владельцем. Отличный сервис."</p>
-                    <cite data-translate="testimonial_2_author">— Мария, Санкт-Петербург</cite>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-translate="testimonial_2">
+                        "Нашёл чей-то кошелёк, быстро связался с владельцем. Отличный сервис."
+                    </p>
+                    <p class="testimonial-author" data-translate="testimonial_2_author">— Мария, Санкт-Петербург</p>
                 </div>
-                <div class="testimonial testimonial-3">
-                    <p data-translate="testimonial_3">"Вернули чемодан с важными документами. Спасибо огромное!"</p>
-                    <cite data-translate="testimonial_3_author">— Дмитрий, Новосибирск</cite>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-translate="testimonial_3">
+                        "Вернули чемодан с важными документами. Спасибо огромное!"
+                    </p>
+                    <p class="testimonial-author" data-translate="testimonial_3_author">— Дмитрий, Новосибирск</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer chaotic-footer">
+    <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>LostFound Global</h4>
@@ -131,11 +159,22 @@
             <div class="footer-col">
                 <h4 data-translate="footer_info">Информация</h4>
                 <ul>
-                    <li><a href="#" data-translate="footer_about_project">О проекте</a></li>
-                    <li><a href="#" data-translate="footer_contact">Контакты</a></li>
-                    <li><a href="#" data-translate="footer_safety">Безопасность</a></li>
+                    <li><a href="pages/about.html" data-translate="footer_about_project">О проекте</a></li>
+                    <li><a href="pages/contact.html" data-translate="footer_contact">Контакты</a></li>
+                    <li><a href="pages/safety.html" data-translate="footer_safety">Безопасность</a></li>
                 </ul>
             </div>
+            <div class="footer-col">
+                <h4>Социальные сети</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LostFound Global. <span data-translate="footer_copyright">Все права защищены</span>.</p>
         </div>
     </footer>
 
