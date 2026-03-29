@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | LostFound Global</title>
+    <meta name="description" content="Свяжитесь с нами по любым вопросам. Мы всегда рады помочь.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="chaotic-bg"></div>
+    
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Lost<span>Found</span></a>
+            </div>
+            <div class="lang-switch">
+                <a href="#" class="lang-link" onclick="toggleLanguage(); return false;">English</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')">☰</button>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html" data-translate="nav_home">Главная</a></li>
+                <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                <li><a href="how-it-works.html" data-translate="nav_how">Как работает</a></li>
+                <li><a href="stories.html" data-translate="nav_stories">Истории</a></li>
+                <li><a href="about.html" data-translate="nav_about">О нас</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-title" data-translate="contact_title">Свяжитесь с нами</h1>
+                <p class="about-subtitle" data-translate="contact_subtitle">Мы всегда рады помочь и ответить на ваши вопросы</p>
+            </div>
+        </section>
+
+        <section class="contact-grid">
+            <div class="contact-info">
+                <h2 data-translate="contact_info_title">Контактная информация</h2>
+                <p data-translate="contact_info_desc">Вы можете связаться с нами любым удобным способом. Мы отвечаем в течение 24 часов.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-emoji">📧</div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:support@lostfound.com">support@lostfound.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-emoji">💬</div>
+                        <div>
+                            <strong>Telegram:</strong><br>
+                            <a href="#">@lostfound_support</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-emoji">🐦</div>
+                        <div>
+                            <strong>Twitter:</strong><br>
+                            <a href="#">@lostfound_global</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Telegram</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            
+            <div class="form-card" style="box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+                <h2 data-translate="contact_form_title">Напишите нам</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label data-translate="contact_name">Ваше имя</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="contact_email">Email</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="contact_subject">Тема</label>
+                        <input type="text" id="contactSubject" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="contact_message">Сообщение</label>
+                        <textarea id="contactMessage" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" data-translate="contact_send">Отправить</button>
+                </form>
+                <div id="contactResult" class="result-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>LostFound Global</h4>
+                <p data-translate="footer_about">Возвращаем потерянное с 2024 года</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_links">Ссылки</h4>
+                <ul>
+                    <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                    <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                    <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_info">Информация</h4>
+                <ul>
+                    <li><a href="about.html" data-translate="footer_about_project">О проекте</a></li>
+                    <li><a href="contact.html" data-translate="footer_contact">Контакты</a></li>
+                    <li><a href="safety.html" data-translate="footer_safety">Безопасность</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Социальные сети</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LostFound Global. <span data-translate="footer_copyright">Все права защищены</span>.</p>
+        </div>
+    </footer>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+        // Обработка формы контактов
+        document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const msg = currentLang === 'ru' 
+                ? 'Спасибо! Мы свяжемся с вами в ближайшее время.'
+                : 'Thank you! We will contact you soon.';
+            showMessage('contactResult', msg, 'success');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
