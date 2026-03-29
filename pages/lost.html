@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщить о потере | LostFound Global</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="chaotic-bg"></div>
+    
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Lost<span>Found</span></a>
+            </div>
+            <div class="lang-switch">
+                <a href="#" class="lang-link" onclick="toggleLanguage(); return false;">English</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')">☰</button>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html" data-translate="nav_home">Главная</a></li>
+                <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="form-card">
+                <h1 class="form-title" data-translate="lost_title">Сообщить о потере</h1>
+                <p class="form-subtitle" data-translate="lost_subtitle">Заполните форму. Мы уведомим вас, если кто-то найдёт вашу вещь.</p>
+                
+                <form id="lostForm">
+                    <div class="form-group">
+                        <label data-translate="lost_item_name">Название вещи</label>
+                        <input type="text" id="itemName" data-translate-placeholder="lost_item_name_placeholder" placeholder="iPhone 14 Pro, чёрный рюкзак" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate="lost_category">Категория</label>
+                            <select id="category" required>
+                                <option value="" data-translate="lost_category_select">Выберите категорию</option>
+                                <option value="electronics" data-translate="category_electronics">Электроника</option>
+                                <option value="bags" data-translate="category_bags">Сумки и багаж</option>
+                                <option value="documents" data-translate="category_documents">Документы</option>
+                                <option value="jewelry" data-translate="category_jewelry">Украшения</option>
+                                <option value="keys" data-translate="category_keys">Ключи</option>
+                                <option value="wallet" data-translate="category_wallet">Кошелёк и карты</option>
+                                <option value="clothing" data-translate="category_clothing">Одежда</option>
+                                <option value="other" data-translate="category_other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-translate="lost_color">Цвет</label>
+                            <input type="text" id="color" data-translate-placeholder="lost_color_placeholder" placeholder="чёрный, серебристый">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-translate="lost_brand">Бренд / Модель</label>
+                        <input type="text" id="brand" data-translate-placeholder="lost_brand_placeholder" placeholder="Apple, Nike">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate="lost_location">Место потери</label>
+                            <input type="text" id="location" data-translate-placeholder="lost_location_placeholder" placeholder="метро, парк, кафе" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-translate="lost_city">Город</label>
+                            <input type="text" id="city" data-translate-placeholder="lost_city_placeholder" placeholder="Москва, Лондон" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-translate="lost_country">Страна</label>
+                        <input type="text" id="country" data-translate-placeholder="lost_country_placeholder" placeholder="Россия, США" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-translate="lost_date">Дата потери</label>
+                        <input type="date" id="dateLost" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-translate="lost_description">Описание</label>
+                        <textarea id="description" data-translate-placeholder="lost_description_placeholder" placeholder="Любые детали, которые помогут опознать вещь"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-translate="lost_contact">Email для связи</label>
+                        <input type="email" id="contactEmail" data-translate-placeholder="lost_contact_placeholder" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block" data-translate="lost_submit">Отправить заявку</button>
+                </form>
+                
+                <div id="resultMessage" class="result-message"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>LostFound Global</h4>
+                <p data-translate="footer_about">Возвращаем потерянное с 2024 года</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_links">Ссылки</h4>
+                <ul>
+                    <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                    <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                    <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_info">Информация</h4>
+                <ul>
+                    <li><a href="#" data-translate="footer_about_project">О проекте</a></li>
+                    <li><a href="#" data-translate="footer_contact">Контакты</a></li>
+                    <li><a href="#" data-translate="footer_safety">Безопасность</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
