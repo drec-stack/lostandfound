@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как работает LostFound | LostFound Global</title>
+    <meta name="description" content="Узнайте как работает сервис поиска потерянных вещей. Простой процесс в три шага.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="chaotic-bg"></div>
+    
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Lost<span>Found</span></a>
+            </div>
+            <div class="lang-switch">
+                <a href="#" class="lang-link" onclick="toggleLanguage(); return false;">English</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('active')">☰</button>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../index.html" data-translate="nav_home">Главная</a></li>
+                <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                <li><a href="how-it-works.html" data-translate="nav_how">Как работает</a></li>
+                <li><a href="stories.html" data-translate="nav_stories">Истории</a></li>
+                <li><a href="about.html" data-translate="nav_about">О нас</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-title" data-translate="how_title">Как работает сервис</h1>
+                <p class="about-subtitle" data-translate="how_subtitle">Простой процесс в три шага, который поможет вернуть потерянное</p>
+            </div>
+        </section>
+
+        <section class="how-it-works-page">
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number-large">1</div>
+                    <div class="step-content">
+                        <h3 data-translate="step1_title">Сообщите о потере или находке</h3>
+                        <p data-translate="step1_desc">Заполните простую форму: укажите что вы потеряли или нашли, где это произошло, и ваши контактные данные. Это займёт не более 2 минут.</p>
+                        <div class="step-tip">
+                            <strong>💡 Совет:</strong> Чем подробнее описание, тем выше шанс найти совпадение.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number-large">2</div>
+                    <div class="step-content">
+                        <h3 data-translate="step2_title">Наша система ищет совпадения</h3>
+                        <p data-translate="step2_desc">Автоматический алгоритм анализирует все заявки и находит потенциальные совпадения по категории, местоположению, цвету и другим параметрам.</p>
+                        <div class="step-tip">
+                            <strong>🤖 Технологии:</strong> Мы используем современные алгоритмы матчинга для максимально точного поиска.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number-large">3</div>
+                    <div class="step-content">
+                        <h3 data-translate="step3_title">Свяжитесь и верните вещь</h3>
+                        <p data-translate="step3_desc">При нахождении совпадения вы получите уведомление. Свяжитесь с другой стороной через безопасный канал и договоритесь о возврате.</p>
+                        <div class="step-tip">
+                            <strong>🔒 Безопасность:</strong> Ваши контактные данные раскрываются только при взаимном согласии.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" style="background: transparent;">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="statsLost">0</div>
+                        <div class="stat-label" data-translate="stat_lost">Потеряно вещей</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statsFound">0</div>
+                        <div class="stat-label" data-translate="stat_found">Найдено вещей</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statsMatched">0</div>
+                        <div class="stat-label" data-translate="stat_matched">Успешных возвратов</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>LostFound Global</h4>
+                <p data-translate="footer_about">Возвращаем потерянное с 2024 года</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_links">Ссылки</h4>
+                <ul>
+                    <li><a href="lost.html" data-translate="nav_lost">Я потерял</a></li>
+                    <li><a href="found.html" data-translate="nav_found">Я нашёл</a></li>
+                    <li><a href="search.html" data-translate="nav_search">Поиск</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-translate="footer_info">Информация</h4>
+                <ul>
+                    <li><a href="about.html" data-translate="footer_about_project">О проекте</a></li>
+                    <li><a href="contact.html" data-translate="footer_contact">Контакты</a></li>
+                    <li><a href="safety.html" data-translate="footer_safety">Безопасность</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Социальные сети</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LostFound Global. <span data-translate="footer_copyright">Все права защищены</span>.</p>
+        </div>
+    </footer>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
